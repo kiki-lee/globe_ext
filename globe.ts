@@ -10,7 +10,7 @@ namespace SpriteKind {
 
 // Set walled tilemap so that character 
 // doesn't fall through the floor
-tiles.setCurrentTilemap(tilemap`court_floor`)
+tiles.setCurrentTilemap(globe_imgs.court_floor)
 
 
 namespace globetrotters {
@@ -83,8 +83,8 @@ namespace globetrotters {
     export function setLevel2(thisImg: Image) {
         scroller.setBackgroundScrollOffset(0, 0)
         scroller.scrollBackgroundWithSpeed(0, 0)
-        scene.setBackgroundImage(assets.image`court`)
-        let hoop = sprites.create(assets.image`Net`, SpriteKind.Bucket)
+        scene.setBackgroundImage(globe_imgs.court)
+        let hoop = sprites.create(globe_imgs.net, SpriteKind.Bucket)
         hoop.setPosition(133, 43)
         mySprite2 = carnival.create(thisImg, SpriteKind.Player, 55, 80)
         mySprite2.setTraceMulti(carnival.Tracers.Part)
