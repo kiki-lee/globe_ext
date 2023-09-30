@@ -1,6 +1,4 @@
-// Set walled tilemap so that character 
-// doesn't fall through the floor
-tiles.setCurrentTilemap(globe_imgs.court_floor)
+
 
 
 namespace SpriteKind {
