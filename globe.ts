@@ -1,3 +1,7 @@
+// Set walled tilemap so that character 
+// doesn't fall through the floor
+tiles.setCurrentTilemap(globe_imgs.court_floor)
+
 
 namespace SpriteKind {
     //% isKind
@@ -7,10 +11,6 @@ namespace SpriteKind {
     //% isKind
     export const Bucket = SpriteKind.create()
 }
-
-// Set walled tilemap so that character 
-// doesn't fall through the floor
-tiles.setCurrentTilemap(globe_imgs.court_floor)
 
 
 namespace globetrotters {
@@ -67,6 +67,7 @@ namespace globetrotters {
         globe_animations.wham_standing,
         globe_animations.tnt_standing,
         globe_animations.jet_standing,
+        globe_animations.coach_standing,
         globe_animations.cheese_standing,
         globe_animations.hotshot_standing,
         globe_animations.torch_standing
