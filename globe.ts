@@ -15,7 +15,6 @@ namespace SpriteKind {
 * For the Globetrotters Tutorial
 */
 //% color=#151515 icon="\uf434"
-//% groups='["Ball", "Teams", "Timer", "Countdown", "Game", "Scene"]'
 namespace globetrotters {
 
     let mySprite2: Ball = null
@@ -23,22 +22,22 @@ namespace globetrotters {
     // Enums to choose which player to add as NPC
     export enum NPCnum {
         //% block="Wham"
-        WHAM=0,
+        WHAM = 0,
         //% block="TNT"
-        Tnt=1,
+        Tnt = 1,
         //% block="Jet"
-        JET=2,
+        JET = 2,
         //% block="Coach"
-        COACH=3,
+        COACH = 3,
         //% block="Cheese"
-        CHEESE=4,
+        CHEESE = 4,
         //% block="Hotshot"
-        HOTSHOT=5,
+        HOTSHOT = 5,
         //% block="Torch"
-        TORCH=6
+        TORCH = 6
     }
 
-    
+
     export let question_list = [
         "Who founded the Harlem Globetrotters?",
         "The Harlem Globetrotters played in Harlem, New York for the first time in what year?",
@@ -82,7 +81,7 @@ namespace globetrotters {
     //% blockId=set_level_2
     //% block="set level 2 using player $thisImg"
     //% thisImg.defl=globe_animations.tnt
-    //% thisImg.shadow=globe_image_picker
+    //% thisImg.shadow=screen_image_picker_globe
     //% help=github:docs/set_level_2
     export function setLevel2(thisImg: Image) {
         scroller.setBackgroundScrollOffset(0, 0)
@@ -132,7 +131,7 @@ namespace globetrotters {
     */
     //% blockId=ask_question
     //% block="ask question from $thisSprite"
-    //% thisSprite.defl=otherSprite
+    //% thisSprite.shadow=variables_get
     //% help=github:docs/ask_question
     export function askQuestion(thisSprite: Sprite) {
         thisSprite.setKind(SpriteKind.Complete)
@@ -148,7 +147,7 @@ namespace globetrotters {
             music.play(music.melodyPlayable(music.buzzer), music.PlaybackMode.UntilDone)
             sprites.destroy(thisSprite)
         }
-        
+
     }
 
 
@@ -158,7 +157,7 @@ namespace globetrotters {
     */
     //% blockId=npc_number
     //% block="get NPC number from $thisSprite"
-    //% thisSprite.defl=otherSprite
+    //% thisSprite.shadow=variables_get
     //% help=github:docs/npc_number
     export function NPCNumberOf(thisSprite: Sprite) {
         return sprites.readDataNumber(thisSprite, "npcNum") + 1
@@ -171,7 +170,7 @@ namespace globetrotters {
     //% blockId=toss_ball
     //% block="toss $thisImg"
     //% thisImg.defl=globe_imgs.ball
-    //% thisImg.shadow=globe_image_picker
+    //% thisImg.shadow=screen_image_picker_globe
     //% help=github:docs/toss_ball
     export function tossBall(thisImg: Image) {
         if (mySprite2) {
@@ -182,23 +181,22 @@ namespace globetrotters {
 
 }
 
+
+/**
+ * Image manipulation blocks
+ */
+//% weight=70 icon="\uf03e" color="#a5b1c2"
+//% advanced=true
 namespace images {
-
-
-    /**
-     * An image
-     * @param image the image
-     */
-    //% blockId=globe_image_picker block="%image" shim=TD_ID
-    //% image.fieldEditor="images"
-    //% image.fieldOptions.columns=6
-    //% image.fieldOptions.width=600
-    //% img.fieldOptions.filter="globe"
-    //% weight=0 group="Create"
-    export function _imageGlobe(image: Image): Image {
-        return image;
+    //% blockId=screen_image_picker_globe block="%img"
+    //% shim=TD_ID
+    //% img.fieldEditor="sprite"
+    //% img.fieldOptions.taggedTemplate="img"
+    //% img.fieldOptions.decompileIndirectFixedInstances="true"
+    //% img.fieldOptions.decompileArgumentAsString="true"
+    //% img.fieldOptions.filter="globe !tile !dialog !background"
+    //% weight=100 group="Create" duplicateShadowOnDrag
+    export function _spriteImageGlobe(img: Image) {
+        return img
     }
-
 }
-
-    
