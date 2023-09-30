@@ -7,8 +7,6 @@
         "arcade-story": "github:microsoft/arcade-storytelling#v1.0.3",
         "arcade-background-scroll": "github:microsoft/arcade-background-scroll#6cfbf925b9a4d5ddf3e1078e6cf6ca6a1aebb301",
         "carnival": "github:microsoft/arcade-carnival#v0.0.7",
-        "globe_imgs": "github:kiki-lee/globe_imgs#v0.0.2",
-        "globe_animations": "github:kiki-lee/globe_animations#v0.0.1",
         "arcade-character-animations": "github:microsoft/arcade-character-animations",
         "arcade-sprite-data": "github:microsoft/arcade-sprite-data"
     },
@@ -16,11 +14,6 @@
         "main.blocks",
         "main.ts",
         "README.md",
-        "assets.json",
-        "tilemap.g.jres",
-        "tilemap.g.ts",
-        "images.g.jres",
-        "images.g.ts",
         "globe.ts"
     ],
     "testFiles": [
