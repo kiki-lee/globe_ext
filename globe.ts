@@ -91,6 +91,7 @@ namespace globetrotters {
         mySprite2.setTraceMulti(carnival.Tracers.Part)
         mySprite2.controlBallWithArrowKeys(true)
         scene.centerCameraAt(80, 60)
+        pause(100)
     }
 
 
@@ -117,7 +118,7 @@ namespace globetrotters {
             200,
             true
         )
-        teammate.setPosition(224 * num, 72)
+        teammate.setPosition(224 * num, 87)
         teammate.sayText("Hi!  I'm " + globetrotters.character[thisChoice])
     }
 
@@ -144,7 +145,7 @@ namespace globetrotters {
             music.play(music.melodyPlayable(music.buzzer), music.PlaybackMode.UntilDone)
             sprites.destroy(thisSprite)
         }
-        pause(50)
+        
     }
 
 
