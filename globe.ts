@@ -11,6 +11,11 @@ namespace SpriteKind {
 }
 
 
+/**
+* For the Globetrotters Tutorial
+*/
+//% color=#151515 icon="\uf434"
+//% groups='["Ball", "Teams", "Timer", "Countdown", "Game", "Scene"]'
 namespace globetrotters {
 
     let mySprite2: Ball = null
