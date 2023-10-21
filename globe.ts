@@ -189,8 +189,8 @@ namespace globetrotters {
     */
     //% blockId=ask_question2
     //% block="$thatSprite ask $thisSprite a question"
-    //% thisSprite.defl=sprite
-    //% thatSprite.defl=otherSprite
+    //% thisSprite.shadow=variables_get
+    //% thatSprite.shadow=variables_get
     //% help=github:docs/ask_question2
     export function askQuestion2(thisSprite:Sprite, thatSprite:Sprite) {
         controller.moveSprite(thisSprite, 0, 0)
