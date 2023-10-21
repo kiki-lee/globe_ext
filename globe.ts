@@ -206,7 +206,7 @@ namespace globetrotters {
     //% block="player gets $thisNum"
     //% thisNum.defl=30
     //% help=github:docs/check_score
-    export function checkScore(thisNum: Number) {
+    export function checkScore(thisNum: number) {
         if (spritesTalkedTo >= 4) {
             if (info.score() >= thisNum) {
                 return true;
