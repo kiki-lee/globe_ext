@@ -212,7 +212,7 @@ namespace globetrotters {
                 return true;
             } else {
                 music.play(music.melodyPlayable(music.wawawawaa), music.PlaybackMode.UntilDone)
-                game.showLongText("TRY AGAIN! //n You need 31 points to get to the basketball court. //n YOU GOT THIS!!!", DialogLayout.Full)
+                game.showLongText("TRY AGAIN! \n You need 31 points to get to the basketball court. \n YOU GOT THIS!!!", DialogLayout.Full)
                 game.reset();
                 return false;
             }
