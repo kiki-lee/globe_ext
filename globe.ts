@@ -95,6 +95,10 @@ namespace globetrotters {
         mySprite2.controlBallWithArrowKeys(true)
         scene.centerCameraAt(80, 60)
         pause(100)
+        game.showLongText("Press B to shoot the basketballs. \n You must get to 200 points!",
+            DialogLayout.Bottom)
+        effects.confetti.startScreenEffect(500)
+        info.startCountdown(45)
     }
 
 
