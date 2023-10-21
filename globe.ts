@@ -18,6 +18,7 @@ namespace SpriteKind {
 namespace globetrotters {
 
     let mySprite2: Ball = null
+    let spritesTalkedTo = 0;
 
     // Enums to choose which player to add as NPC
     export enum NPCnum {
@@ -137,6 +138,7 @@ namespace globetrotters {
         thisSprite.setKind(SpriteKind.Complete)
         thisSprite.sayText(" ")
         let thisNPC = sprites.readDataNumber(thisSprite, "npcNum") % question_list.length
+        spritesTalkedTo += 1; 
         game.showLongText(question_list[thisNPC], DialogLayout.Bottom)
         story.showPlayerChoices(answer_list[thisNPC][0], answer_list[thisNPC][1])
         if (story.checkLastAnswer(correct_answers[thisNPC])) {
@@ -160,6 +162,7 @@ namespace globetrotters {
     //% thisSprite.shadow=variables_get
     //% help=github:docs/npc_number
     export function NPCNumberOf(thisSprite: Sprite) {
+
         return sprites.readDataNumber(thisSprite, "npcNum") + 1
     }
 
@@ -178,6 +181,45 @@ namespace globetrotters {
             let myBall = carnival.createProjectileBallFromSprite(thisImg, mySprite2)
         }
     }
+
+
+
+    /**
+    * Freeze player and ask question
+    */
+    //% blockId=ask_question2
+    //% block="$thatSprite ask $thisSprite a question"
+    //% thisSprite.defl=sprite
+    //% thatSprite.defl=otherSprite
+    //% help=github:docs/ask_question2
+    export function askQuestion2(thisSprite:Sprite, thatSprite:Sprite) {
+        controller.moveSprite(thisSprite, 0, 0)
+        globetrotters.askQuestion(thatSprite)
+        controller.moveSprite(thisSprite, 100, 0)
+    }
+
+
+    /**
+    * Check if ready for level 2
+    */
+    //% blockId=check_score
+    //% block="player gets $thisNum"
+    //% thisNum.defl=30
+    //% help=github:docs/check_score
+    export function checkScore(thisNum: Number) {
+        if (spritesTalkedTo >= 4) {
+            if (info.score() >= thisNum) {
+                return true;
+            } else {
+                music.play(music.melodyPlayable(music.wawawawaa), music.PlaybackMode.UntilDone)
+                game.showLongText("TRY AGAIN! /n You need 31 points to get to the basketball court. /n YOU GOT THIS!!!", DialogLayout.Full)
+                game.reset();
+                return false;
+            }
+            return false;
+        } else { return false;}
+    }
+
 
 }
 
@@ -200,3 +242,4 @@ namespace images {
         return img
     }
 }
+
