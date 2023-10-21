@@ -216,7 +216,6 @@ namespace globetrotters {
                 game.reset();
                 return false;
             }
-            return false;
         } else { return false;}
     }
 
