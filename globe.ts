@@ -32,7 +32,7 @@ namespace globetrotters {
         COACH = 3,
         //% block="Cheese"
         CHEESE = 4,
-        //% block="Hotshot"
+        //% block="Hot Shot"
         HOTSHOT = 5,
         //% block="Torch"
         TORCH = 6
@@ -63,7 +63,7 @@ namespace globetrotters {
         "Jet",
         "Coach",
         "Cheese",
-        "Hotshot",
+        "Hot Shot",
         "Torch"
     ]
     export let list = [
@@ -72,7 +72,7 @@ namespace globetrotters {
         globe_animations.jet_standing,
         globe_animations.coach_standing,
         globe_animations.cheese_standing,
-        globe_animations.hotshot_standing,
+        globe_animations.hot_shot_standing,
         globe_animations.torch_standing
     ]
 
